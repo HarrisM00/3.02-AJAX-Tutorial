@@ -15,6 +15,6 @@ function renderHTML(data) {
     var htmlString = "";
 
     for (i = 0; i < data.length; i++ )
-
+htmlString += "<p>" + data[i]
         animalContainer.insertAdjacentHTML('beforeend', htmlString);
 }
