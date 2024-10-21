@@ -10,3 +10,11 @@ btn.addEventListener("click", function() {
 };
 ourRequest.send()  
 });
+
+function renderHTML(data) {
+    var htmlString = "";
+
+    for (i = 0; i < data.length; i++ )
+
+        animalContainer.insertAdjacentHTML('beforeend', htmlString);
+}
