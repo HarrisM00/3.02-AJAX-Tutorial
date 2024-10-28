@@ -1,20 +1,26 @@
-var animalContainer = document.getElementById("animal-info");
-var btn = document.getElementById("btn");
+let pageCounter = 1
+const animalContainer = $('animal-info')
+const btn = $('#btn')
 
-btn.addEventListener("click", function() {
-    var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1')
-    ourRequest.onload = function(){
-    var ourData = JSON.parse(ourRequest.responseText);
-        renderHTML(ourData);
-};
-ourRequest.send()  
-});
+btn.on('click', function() {
+  })
 
-function renderHTML(data) {
-    var htmlString = "";
+  function renderHTML(data) {
+    let htmlString = ''
 
-    for (i = 0; i < data.length; i++ )
-htmlString += "<p>" + data[i]
-        animalContainer.insertAdjacentHTML('beforeend', htmlString);
-}
+    data.forEach(function (animal){
+        htmlString += `<p> $(animal.name) is a $(animal.species) that likes to eat`
+      animal.foods.likes.forEach(function() {
+        htmlString += index === 0 ? like : `and$(like)`
+      })
+      htmlString += 'and dislikes'
+      animal.foods.dislikes.forEach(function(dislike, index) {
+        htmlString += index === 0 ? dislike : `and $(dislike)`
+      
+      })
+      
+    htmlString += '.</p>'
+  })
+
+  animalCounter.append(htmlString)
+  }
